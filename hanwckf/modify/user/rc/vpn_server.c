@@ -69,7 +69,7 @@ gen_vpns_pppd_options(int vpns_type)
 	}
 
 	fprintf(fp, "default-asyncmap\n");
-  fprintf(fp, "+ipv6\n");
+  	fprintf(fp, "+ipv6\n");
 
 	/* looks like pptp also likes them */
 	fprintf(fp, "nopcomp noaccomp\n");
