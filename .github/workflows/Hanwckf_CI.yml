@@ -12,7 +12,7 @@ on:
     types: [started]                                            # 点击 Star 之后
 env:
   build_dir: /opt/padavan                                       # 源码目录
-  images_dir: /opt/images                                       # 固件目录
+  images_dir: /opt/pandavan/trunk/user/rc                                      # 固件目录
   work_dir: /opt/padavan/trunk                                  # 工作目录
   config_dir: /opt/padavan/trunk/configs/templates              # 设备模板目录
   src_git: https://github.com/hanwckf/rt-n56u.git               # 源码地址
@@ -81,7 +81,6 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v2.2.1
         with:
-          name: Hanwckf_3.4_${{ env.build_variant }}
           path: ${{ env.images_dir }}
       - name: Upload images to WeTransfer
         if: ${{ github.event.inputs.uploadwet == 'true' && success() }}
